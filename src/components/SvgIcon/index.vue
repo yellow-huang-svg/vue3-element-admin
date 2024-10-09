@@ -18,7 +18,6 @@ const props = defineProps({
 });
 
 const symbolId = computed(() => `#${props.prefix}-${props.iconClass}`);
-console.log(symbolId.value);
 
 </script>
 
