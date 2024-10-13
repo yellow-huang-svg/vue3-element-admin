@@ -1,7 +1,11 @@
 import { createApp } from 'vue'
-import './style.css'
 import App from './App.vue'
-import 'virtual:svg-icons-register';
-import { createPinia } from "pinia";
+import setupPlugins from "@/plugins";
 
-createApp(App).use(createPinia()).mount("#app");
+// 本地SVG图标
+import 'virtual:svg-icons-register';
+
+const app = createApp(App);
+// 注册插件
+app.use(setupPlugins);
+app.mount("#app");
