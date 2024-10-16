@@ -33,26 +33,9 @@ function back() {
       />
     </div>
     <div class="bullshit">
-      <div class="bullshit__oops">OOPS!</div>
-      <div class="bullshit__info">
-        All rights reserved
-        <a
-          style="color: #20a0ff"
-          href="https://wallstreetcn.com"
-          target="_blank"
-        >
-          wallstreetcn
-        </a>
-      </div>
-      <div class="bullshit__headline">
-        The webmaster said that you can not enter this page...
-      </div>
-      <div class="bullshit__info">
-        Please check that the URL you entered is correct, or click the button
-        below to return to the homepage.
-      </div>
+      <div class="bullshit__oops">抱歉，您访问的页面不存在</div>
       <a href="#" class="bullshit__return-home" @click.prevent="back">
-        Back to home
+        回到首页
       </a>
     </div>
   </div>
@@ -189,7 +172,6 @@ function back() {
   }
 
   .bullshit {
-    width: 300px;
     padding: 30px 0;
     overflow: hidden;
 
