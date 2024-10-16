@@ -38,8 +38,8 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
     plugins: [
       vue(),
       AutoImport({
-        // 自动导入 Vue 相关函数，如：ref, reactive, toRef 等
-        imports: ["vue"],
+         // 自动导入 Vue 相关函数，如：ref, reactive, toRef 等
+         imports: ["vue", "@vueuse/core", "pinia", "vue-router"],
         eslintrc: {
           enabled: false, // 是否自动生成 eslint 规则，建议生成之后设置 false 
           filepath: "./.eslintrc-auto-import.json", // 指定自动导入函数 eslint 规则的文件

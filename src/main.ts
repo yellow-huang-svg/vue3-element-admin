@@ -4,6 +4,7 @@ import setupPlugins from "@/plugins";
 
 // 本地SVG图标
 import 'virtual:svg-icons-register';
+import "@/styles/index.less";
 
 const app = createApp(App);
 // 注册插件
