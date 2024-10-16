@@ -62,6 +62,8 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
             enabledCollections: ["ep"] // element-plus图标库，其他图标库 https://icon-sets.iconify.design/
           }),
         ],
+        // 指定自定义组件位置(默认:src/components)
+        dirs: ["src/components", "src/**/components"],
         dts: resolve(pathSrc, "types", "components.d.ts"), // 指定自动导入组件TS类型声明文件路径
       }),
       createSvgIconsPlugin({
