@@ -43,8 +43,7 @@ service.interceptors.response.use(
     if (code === ResultEnum.SUCCESS) {
       return data;
     }
-
-    ElMessage.error(msg || "系统出错");
+    alert('系统出错')
     return Promise.reject(new Error(msg || "Error"));
   },
   (error: any) => {
@@ -52,18 +51,14 @@ service.interceptors.response.use(
     if (error.response.data) {
       const { code, msg } = error.response.data;
       if (code === ResultEnum.TOKEN_INVALID) {
-        ElNotification({
-          title: "提示",
-          message: "您的会话已过期，请重新登录",
-          type: "info",
-        });
+        confirm("您的会话已过期，请重新登录");  
         useUserStoreHook()
           .resetToken()
           .then(() => {
             location.reload();
           });
       } else {
-        ElMessage.error(msg || "系统出错");
+        alert(msg || "系统出错")
       }
     }
     return Promise.reject(error.message);
