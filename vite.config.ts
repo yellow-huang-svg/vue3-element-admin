@@ -12,7 +12,7 @@ const pathSrc = resolve(__dirname, "src");
 export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
   const env = loadEnv(mode, process.cwd());
   return {
-    resolve: {
+    resolve: { // 别名配置
       alias: {
         "@": pathSrc,
       },
@@ -37,9 +37,10 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
     },
     plugins: [
       vue(),
+      /** 自动导入配置  @see https://github.com/sxzz/element-plus-best-practices/blob/main/vite.config.ts */
       AutoImport({
-         // 自动导入 Vue 相关函数，如：ref, reactive, toRef 等
-         imports: ["vue", "@vueuse/core", "pinia", "vue-router"],
+        // 自动导入 Vue 相关函数，如：ref, reactive, toRef 等
+        imports: ["vue", "@vueuse/core", "pinia", "vue-router"],
         eslintrc: {
           enabled: false, // 是否自动生成 eslint 规则，建议生成之后设置 false 
           filepath: "./.eslintrc-auto-import.json", // 指定自动导入函数 eslint 规则的文件
@@ -51,7 +52,7 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
           IconsResolver({}),
         ],
         vueTemplate: true, // 是否在 vue 模板中自动导入
-        dts: resolve(pathSrc, "types", "auto-imports.d.ts"), // 指定自动导入函数TS类型声明文件路径
+        dts: resolve(pathSrc, "types", "auto-imports.d.ts"),  // 指定自动导入函数TS类型声明文件路径 (false:关闭自动生成)
       }),
       Components({
         resolvers: [
@@ -64,7 +65,7 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
         ],
         // 指定自定义组件位置(默认:src/components)
         dirs: ["src/components", "src/**/components"],
-        dts: resolve(pathSrc, "types", "components.d.ts"), // 指定自动导入组件TS类型声明文件路径
+        dts: resolve(pathSrc, "types", "components.d.ts"), // 指定自动导入组件TS类型声明文件路径 (false:关闭自动生成)
       }),
       createSvgIconsPlugin({
         // 指定需要缓存的图标文件夹
