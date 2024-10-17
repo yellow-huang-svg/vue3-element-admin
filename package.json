@@ -11,7 +11,6 @@
   "dependencies": {
     "@vueuse/core": "^10.11.1",
     "axios": "^1.7.7",
-    "element-plus": "^2.8.2",
     "pinia": "^2.2.2",
     "qs": "^6.13.0",
     "vue": "^3.4.37",
@@ -25,7 +24,6 @@
     "less": "^4.2.0",
     "typescript": "^5.5.3",
     "unplugin-auto-import": "^0.18.3",
-    "unplugin-icons": "^0.19.3",
     "unplugin-vue-components": "^0.27.4",
     "vite": "^5.4.1",
     "vite-plugin-svg-icons": "^2.0.1",
