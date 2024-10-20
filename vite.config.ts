@@ -7,6 +7,7 @@ import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
 import Icons from "unplugin-icons/vite";
 import IconsResolver from "unplugin-icons/resolver";
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
+import UnoCSS from 'unocss/vite'
 
 const pathSrc = resolve(__dirname, "src");
 export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
@@ -15,6 +16,19 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
     resolve: { // 别名配置
       alias: {
         "@": pathSrc,
+      },
+    },
+    css: {
+      // CSS 预处理器
+      preprocessorOptions: {
+        // 定义全局 SCSS 变量
+        scss: {
+          javascriptEnabled: true,
+          api: "modern-compiler",
+          additionalData: `
+            @use "@/styles/variables.scss" as *;
+          `,
+        },
       },
     },
     server: {
@@ -37,6 +51,10 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
     },
     plugins: [
       vue(),
+      UnoCSS({
+        hmrTopLevelAwait: false,
+      }),
+      /**
       /** 自动导入配置  @see https://github.com/sxzz/element-plus-best-practices/blob/main/vite.config.ts */
       AutoImport({
         // 自动导入 Vue 相关函数，如：ref, reactive, toRef 等

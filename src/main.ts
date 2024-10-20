@@ -4,7 +4,11 @@ import setupPlugins from "@/plugins";
 
 // 本地SVG图标
 import 'virtual:svg-icons-register';
-import "@/styles/index.less";
+
+// 样式
+import "element-plus/theme-chalk/dark/css-vars.css";
+import "@/styles/index.scss";
+import "uno.css";
 
 const app = createApp(App);
 // 注册插件
