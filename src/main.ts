@@ -9,6 +9,7 @@ import 'virtual:svg-icons-register';
 import "element-plus/theme-chalk/dark/css-vars.css";
 import "@/styles/index.scss";
 import "uno.css";
+import "animate.css";
 
 const app = createApp(App);
 // 注册插件
