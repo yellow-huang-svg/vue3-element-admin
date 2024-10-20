@@ -7,9 +7,23 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    AppLink: typeof import('./../components/AppLink/index.vue')['default']
+    AppMain: typeof import('./../layout/components/AppMain/index.vue')['default']
+    ElBacktop: typeof import('element-plus/es')['ElBacktop']
     ElConfigProvider: typeof import('element-plus/es')['ElConfigProvider']
+    ElIcon: typeof import('element-plus/es')['ElIcon']
+    ElMenu: typeof import('element-plus/es')['ElMenu']
+    ElMenuItem: typeof import('element-plus/es')['ElMenuItem']
+    ElScrollbar: typeof import('element-plus/es')['ElScrollbar']
+    ElSubMenu: typeof import('element-plus/es')['ElSubMenu']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    Sidebar: typeof import('./../layout/components/Sidebar/index.vue')['default']
+    SidebarLogo: typeof import('./../layout/components/Sidebar/components/SidebarLogo.vue')['default']
+    SidebarMenu: typeof import('./../layout/components/Sidebar/components/SidebarMenu.vue')['default']
+    SidebarMenuItem: typeof import('./../layout/components/Sidebar/components/SidebarMenuItem.vue')['default']
+    SidebarMenuItemTitle: typeof import('./../layout/components/Sidebar/components/SidebarMenuItemTitle.vue')['default']
+    SidebarMixTopMenu: typeof import('./../layout/components/Sidebar/components/SidebarMixTopMenu.vue')['default']
     SvgIcon: typeof import('./../components/SvgIcon/index.vue')['default']
   }
 }
