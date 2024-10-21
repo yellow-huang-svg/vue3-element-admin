@@ -40,7 +40,7 @@ export const constantRoutes: RouteRecordRaw[] = [
     name: "/doc",
     meta: {
       title: "平台文档",
-      icon: "document",
+      icon: "menu",
       hidden: false,
       alwaysShow: false,
       params: null,
@@ -63,7 +63,7 @@ export const constantRoutes: RouteRecordRaw[] = [
         name: "Https://juejin.cn/post/7228990409909108793",
         meta: {
           title: "平台文档(外链)",
-          icon: "link",
+          icon: "document",
           hidden: false,
           alwaysShow: false,
           params: null,

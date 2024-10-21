@@ -4,8 +4,6 @@ import { resolve } from "path";
 import AutoImport from "unplugin-auto-import/vite";
 import Components from "unplugin-vue-components/vite";
 import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
-import Icons from "unplugin-icons/vite";
-import IconsResolver from "unplugin-icons/resolver";
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
 import UnoCSS from 'unocss/vite'
 
@@ -62,8 +60,6 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
         resolvers: [
           // 自动导入 Element Plus 相关函数，如：ElMessage, ElMessageBox... (带样式)
           ElementPlusResolver(),
-          // 自动导入图标组件
-          IconsResolver({}),
         ],
         eslintrc: {
           // 是否自动生成 eslint 规则，建议生成之后设置 false
@@ -79,10 +75,6 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
         resolvers: [
           // 自动导入 Element Plus 组件
           ElementPlusResolver(),
-          // 自动注册图标组件
-          IconsResolver({
-            enabledCollections: ["ep"] // element-plus图标库，其他图标库 https://icon-sets.iconify.design/
-          }),
         ],
         // 指定自定义组件位置(默认:src/components)
         dirs: ["src/components", "src/**/components"],
@@ -93,10 +85,6 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
         iconDirs: [resolve(process.cwd(), 'src/assets/icons')],
         // 指定symbolId格式
         symbolId: 'icon-[dir]-[name]',
-      }),
-      Icons({
-        // 自动安装图标库
-        autoInstall: true,
       }),
     ]
   }

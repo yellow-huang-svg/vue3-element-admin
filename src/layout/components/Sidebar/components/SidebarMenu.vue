@@ -3,6 +3,7 @@
   <el-menu
     ref="menuRef"
     :default-active="currentRoute.path"
+    :collapse="!appStore.sidebar.opened"
     :background-color="variables['menu-background']"
     :text-color="variables['menu-text']"
     :active-text-color="variables['menu-active-text']"
@@ -26,6 +27,7 @@ import path from "path-browserify"; // 第三方库
 import { isExternal } from "@/utils/index"; // 工具函数
 import variables from "@/styles/variables.module.scss"; // 样式
 import type { MenuInstance } from "element-plus"; // 类型
+import { useAppStore } from "@/store"; // 内部模块
 
 // 定义组件 props
 const props = defineProps({
@@ -42,7 +44,7 @@ const props = defineProps({
 
 const menuRef = ref<MenuInstance>();
 const currentRoute = useRoute();
-
+const appStore = useAppStore();
 /**
  * 获取完整路径
  * @param routePath 路由路径 /user

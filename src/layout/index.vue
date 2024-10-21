@@ -1,12 +1,12 @@
 <template>
-  <div class="wh-full">
+  <div class="wh-full" :class="classObj">
     <!-- 公用侧边栏 -->
     <Sidebar class="sidebar-container" />
     <!-- 左侧和顶部布局 -->
     <div class="main-container">
       <div class="fixed-header">
-        <!-- <NavBar v-if="layout === LayoutEnum.LEFT" /> -->
-        <!-- <TagsView v-if="showTagsView" /> -->
+        <NavBar />
+        <TagsView />
       </div>
       <AppMain />
     </div>
@@ -14,6 +14,25 @@
 </template>
 
 <script setup lang="ts">
+import { useAppStore } from "@/store";
+
+const appStore = useAppStore();
+const width = useWindowSize().width;
+
+const WIDTH_DESKTOP = 992; // 响应式布局容器固定宽度  大屏（>=1200px） 中屏（>=992px） 小屏（>=768px）
+const classObj = computed(() => ({
+  hideSidebar: !appStore.sidebar.opened,
+  openSidebar: appStore.sidebar.opened,
+  [`layout-left`]: true,
+}));
+
+watchEffect(() => {
+  if (width.value >= WIDTH_DESKTOP) {
+    appStore.openSideBar();
+  } else {
+    appStore.closeSideBar();
+  }
+});
 </script>
 
 <style lang="scss" scoped>

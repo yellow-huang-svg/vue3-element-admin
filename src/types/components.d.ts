@@ -9,13 +9,18 @@ declare module 'vue' {
   export interface GlobalComponents {
     AppLink: typeof import('./../components/AppLink/index.vue')['default']
     AppMain: typeof import('./../layout/components/AppMain/index.vue')['default']
+    Breadcrumb: typeof import('./../components/Breadcrumb/index.vue')['default']
     ElBacktop: typeof import('element-plus/es')['ElBacktop']
+    ElBreadcrumb: typeof import('element-plus/es')['ElBreadcrumb']
+    ElBreadcrumbItem: typeof import('element-plus/es')['ElBreadcrumbItem']
     ElConfigProvider: typeof import('element-plus/es')['ElConfigProvider']
     ElIcon: typeof import('element-plus/es')['ElIcon']
     ElMenu: typeof import('element-plus/es')['ElMenu']
     ElMenuItem: typeof import('element-plus/es')['ElMenuItem']
     ElScrollbar: typeof import('element-plus/es')['ElScrollbar']
     ElSubMenu: typeof import('element-plus/es')['ElSubMenu']
+    Hamburger: typeof import('./../components/Hamburger/index.vue')['default']
+    NavBar: typeof import('./../layout/components/NavBar/index.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     Sidebar: typeof import('./../layout/components/Sidebar/index.vue')['default']
@@ -25,5 +30,6 @@ declare module 'vue' {
     SidebarMenuItemTitle: typeof import('./../layout/components/Sidebar/components/SidebarMenuItemTitle.vue')['default']
     SidebarMixTopMenu: typeof import('./../layout/components/Sidebar/components/SidebarMixTopMenu.vue')['default']
     SvgIcon: typeof import('./../components/SvgIcon/index.vue')['default']
+    TagsView: typeof import('./../layout/components/TagsView/index.vue')['default']
   }
 }

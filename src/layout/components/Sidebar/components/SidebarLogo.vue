@@ -1,9 +1,9 @@
 <template>
   <div class="logo-container">
     <transition enter-active-class="animate__animated animate__fadeInLeft">
-      <router-link class="wh-full flex-center" to="/">
+      <router-link :key="+collapse" class="wh-full flex-center" to="/">
         <img :src="logo" class="logo-image" />
-        <span class="logo-title">
+        <span v-if="!collapse" class="logo-title">
           vue3 admin
         </span>
       </router-link>
@@ -14,6 +14,12 @@
 <script lang="ts" setup>
 import logo from "@/assets/logo.png";
 
+defineProps({
+  collapse: {
+    type: Boolean,
+    required: true,
+  },
+});
 </script>
 
 <style lang="scss" scoped>
