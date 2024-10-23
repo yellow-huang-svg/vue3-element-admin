@@ -10,7 +10,6 @@ declare module 'vue' {
     AppLink: typeof import('./../components/AppLink/index.vue')['default']
     AppMain: typeof import('./../layout/components/AppMain/index.vue')['default']
     Breadcrumb: typeof import('./../components/Breadcrumb/index.vue')['default']
-    ElBacktop: typeof import('element-plus/es')['ElBacktop']
     ElBreadcrumb: typeof import('element-plus/es')['ElBreadcrumb']
     ElBreadcrumbItem: typeof import('element-plus/es')['ElBreadcrumbItem']
     ElConfigProvider: typeof import('element-plus/es')['ElConfigProvider']
@@ -28,7 +27,6 @@ declare module 'vue' {
     SidebarMenu: typeof import('./../layout/components/Sidebar/components/SidebarMenu.vue')['default']
     SidebarMenuItem: typeof import('./../layout/components/Sidebar/components/SidebarMenuItem.vue')['default']
     SidebarMenuItemTitle: typeof import('./../layout/components/Sidebar/components/SidebarMenuItemTitle.vue')['default']
-    SidebarMixTopMenu: typeof import('./../layout/components/Sidebar/components/SidebarMixTopMenu.vue')['default']
     SvgIcon: typeof import('./../components/SvgIcon/index.vue')['default']
     TagsView: typeof import('./../layout/components/TagsView/index.vue')['default']
   }
